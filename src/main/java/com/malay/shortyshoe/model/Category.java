@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +20,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "category")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Category {
 	
 	@Id
@@ -28,7 +32,7 @@ public class Category {
 	@Column(name = "c_name")
 	private String categoryName;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+	@OneToMany(mappedBy = "category",cascade = CascadeType.ALL)
 	private List<Shoe> shoe;
 
 	public Category(String categoryName, List<Shoe> shoe) {
@@ -40,3 +44,4 @@ public class Category {
 	
 
 }
+ 

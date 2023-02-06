@@ -12,15 +12,17 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "user")
-@Data
+@Table(name = "customer")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+@Data
+@Builder
+public class Customer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,10 +38,10 @@ public class User {
 	@Column(name ="password")
 	private String password;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "customer")
+	@OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
 	private List<PurchaseReport> purchaseReport;
 
-	public User(String name, String email, String password) {
+	public Customer(String name, String email, String password) {
 
 		this.name = name;
 		this.email = email;

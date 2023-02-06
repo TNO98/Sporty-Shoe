@@ -9,9 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,6 +22,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
+@Builder
 public class PurchaseReport {
 	
 	@Id
@@ -28,15 +31,16 @@ public class PurchaseReport {
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name = "c_id",nullable = false)
-	private User customer;
+	@JoinColumn(name = "c_id")
+	private Customer customer;
 	
 	@Column(name="shoes")
+	@OneToMany(mappedBy = "pr")
 	private List<Shoe> shoe;
 
-	public PurchaseReport(User customer, List<Shoe> shoe) {
+	public PurchaseReport(Customer customer, List<Shoe> shoe) {
 		this.customer = customer;
-		this.shoe = shoe;
+//		this.shoe = shoe;
 	}
 	
 	
