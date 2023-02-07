@@ -17,7 +17,14 @@ public class SpringSecurityConfig {
 	
 	@Bean
 	public SecurityFilterChain filterChain(HttpSecurity httpSecurity) throws Exception {
-		httpSecurity.csrf().disable();
+		httpSecurity.csrf().disable()
+					.authorizeHttpRequests()
+					.antMatchers("/imp")
+					.permitAll()
+					.anyRequest()
+					.authenticated()
+					.and()
+					.formLogin();
 		
 		return httpSecurity.build();
 	}

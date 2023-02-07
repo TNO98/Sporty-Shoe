@@ -19,7 +19,7 @@ import com.malay.shortyshoe.model.Category;
 import com.malay.shortyshoe.service.CategoryService;
 
 @RestController
-@RequestMapping("/category")
+@RequestMapping("api/category")
 public class CategoryController {
 	
 	@Autowired

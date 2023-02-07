@@ -1,0 +1,7 @@
+com.malay.shortyshoe
+com.malay.shortyshoe.config
+com.malay.shortyshoe.controller
+com.malay.shortyshoe.exception
+com.malay.shortyshoe.model
+com.malay.shortyshoe.repository
+com.malay.shortyshoe.service

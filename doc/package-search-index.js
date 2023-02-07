@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.malay.shortyshoe"},{"l":"com.malay.shortyshoe.config"},{"l":"com.malay.shortyshoe.controller"},{"l":"com.malay.shortyshoe.exception"},{"l":"com.malay.shortyshoe.model"},{"l":"com.malay.shortyshoe.repository"},{"l":"com.malay.shortyshoe.service"}];updateSearchResults();
